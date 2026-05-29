@@ -1,0 +1,42 @@
+{
+  "language": "en",
+  "photo_description": "A grand ornate interior staircase, likely the Palais Garnier opera house in Paris, featuring a wide marble stairway with decorative balustrades, bronze statuary, and warm candlelight-style chandeliers illuminating multiple levels.",
+  "findings": [
+    {
+      "dimension": "entrance",
+      "observation": "A very large, wide central staircase with numerous marble steps is the primary means of vertical circulation. No ramp, lift, or alternative accessible route is visible in this photo. The staircase splits into two branching flights at a landing midway up.",
+      "estimated_measure": "approximately 15–20 visible steps from ground floor to landing, each step riser approximately 12–16 cm high, tread approximately 35–45 cm deep",
+      "confidence": 0.82
+    },
+    {
+      "dimension": "flooring",
+      "observation": "The staircase and floor surfaces appear to be polished marble. Polished marble presents a high slip risk, especially on step nosings, and there is no visible contrasting edge strip or non-slip treatment on the step edges.",
+      "estimated_measure": null,
+      "confidence": 0.88
+    },
+    {
+      "dimension": "equipment",
+      "observation": "Decorative balustrades and handrails are present on both sides of the staircase. The handrails appear to be ornamental stone or marble and do not appear to be continuous or ergonomically graspable; no tactile or standard-height accessible handrail is visible.",
+      "estimated_measure": "handrail height approximately 85–95 cm based on stair proportions",
+      "confidence": 0.65
+    },
+    {
+      "dimension": "path_width",
+      "observation": "The main staircase is extremely wide, appearing to accommodate many people side by side. However, the sole visible route to upper levels is via stairs, presenting a complete barrier for wheelchair users or those unable to use steps.",
+      "estimated_measure": "staircase width approximately 6–10 m",
+      "confidence": 0.7
+    },
+    {
+      "dimension": "lighting",
+      "observation": "Lighting is warm and amber-toned from multiple large candelabra-style chandeliers and wall-mounted torchères. Overall luminance appears moderate to dim for a public circulation space; shadows are visible on the stair treads, which may reduce step-edge visibility and increase fall risk.",
+      "estimated_measure": null,
+      "confidence": 0.85
+    },
+    {
+      "dimension": "signage",
+      "observation": "No directional signage, accessible route signage, tactile wayfinding strips, or Braille elements are visible in this photo.",
+      "estimated_measure": null,
+      "confidence": 0.8
+    }
+  ]
+}

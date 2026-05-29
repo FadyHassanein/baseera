@@ -1,0 +1,48 @@
+{
+  "language": "en",
+  "photo_description": "Interior of a large ornate mosque featuring a vast open prayer hall with tall marble columns, striped arches, and elaborate chandeliers; several individuals are visible in the hall providing scale.",
+  "findings": [
+    {
+      "dimension": "flooring",
+      "observation": "The floor appears to be polished marble or stone tile in light cream/white tones in the central walking areas, transitioning to a red carpet area in the prayer zones. The polished hard surface poses a potential slip risk, especially when wet.",
+      "estimated_measure": "Tile/marble sections appear approximately 60–80 cm per tile based on visible grout lines",
+      "confidence": 0.82
+    },
+    {
+      "dimension": "path_width",
+      "observation": "The open floor space between columns is extremely wide, providing very generous navigable space throughout the hall. No visible obstacles block the main circulation paths in the central area.",
+      "estimated_measure": "Column spacing approximately 5–8 m apart, yielding very wide aisles",
+      "confidence": 0.8
+    },
+    {
+      "dimension": "lighting",
+      "observation": "The hall is brightly and uniformly lit by large decorative chandeliers and wall-mounted lanterns distributed throughout the space. Lighting appears warm-white to cool-white mixed, with high overall brightness and minimal shadow areas. Glare risk from the polished floor surface reflecting overhead lights is possible.",
+      "estimated_measure": null,
+      "confidence": 0.9
+    },
+    {
+      "dimension": "seating",
+      "observation": "Low, flat bench-like structures (likely Quran holder/bookshelf units) are arranged in rows across the floor. These are not standard seating and appear very low to the ground, with no chair-height seating visible. No movable chairs or tables are apparent.",
+      "estimated_measure": "Structures appear approximately 20–35 cm in height",
+      "confidence": 0.75
+    },
+    {
+      "dimension": "path_width",
+      "observation": "The aisles between the rows of low furniture units appear moderately wide, likely sufficient for wheelchair passage, though the rows of low bookshelf units could present a navigation challenge for mobility device users.",
+      "estimated_measure": "Aisle widths between furniture rows approximately 80–120 cm",
+      "confidence": 0.62
+    },
+    {
+      "dimension": "other",
+      "observation": "The hall is column-supported with many large structural columns distributed across the floor. While columns are widely spaced, their presence throughout the space could affect navigation for users with visual impairments or those using mobility aids.",
+      "estimated_measure": "Columns appear approximately 60–80 cm in diameter at base",
+      "confidence": 0.78
+    },
+    {
+      "dimension": "other",
+      "observation": "A large open archway is visible on the right side of the hall, suggesting access to an adjoining area or exterior courtyard with no visible step or threshold at this opening.",
+      "estimated_measure": "Archway opening appears approximately 4–6 m wide and 5–7 m tall",
+      "confidence": 0.65
+    }
+  ]
+}

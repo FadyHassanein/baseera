@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #b85c38;
+  --color-brand-dark: #8a3e22;
+  --color-brand-light: #e8a485;
+  --color-brand-pale: #faf0eb;
+
+  --color-confirmed: #1d9e75;
+  --color-confirmed-bg: #e1f5ee;
+  --color-confirmed-text: #085041;
+  --color-confirmed-border: #9fe1cb;
+
+  --color-uncertain: #ba7517;
+  --color-uncertain-bg: #faeeda;
+  --color-uncertain-text: #633806;
+  --color-uncertain-border: #fac775;
+
+  --color-unknown: #888780;
+  --color-unknown-bg: #f1efe8;
+  --color-unknown-text: #2c2c2a;
+
+  --color-inadequate: #a32d2d;
+  --color-inadequate-bg: #fcebeb;
+  --color-inadequate-text: #501313;
+  --color-inadequate-border: #f7c1c1;
+
+  /* Legacy aliases (deprecate after F4 lands) */
+  --color-decision: #ba7517;
+  --color-decision-bg: #faeeda;
+  --color-decision-text: #633806;
+
+  --color-ink-1: #2c2c2a;
+  --color-ink-2: #5f5e5a;
+  --color-ink-3: #888780;
+
+  --color-border-soft: #d3d1c7;
+  --color-surface: #f5f3ee;
+  --color-page-bg: #fafaf9;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "DM Sans", "Cairo", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", "Segoe UI Arabic", Roboto, "Helvetica Neue", "Noto Sans Arabic", sans-serif;
+  background: var(--color-page-bg);
+  color: var(--color-ink-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: "Fraunces", "Cairo", Georgia, "Times New Roman", serif;
+  font-feature-settings: "ss01" on;
+}
+
+.font-arabic {
+  font-family: "Cairo", "DM Sans", system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}

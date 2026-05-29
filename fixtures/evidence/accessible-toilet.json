@@ -1,0 +1,60 @@
+{
+  "language": "en",
+  "photo_description": "An overhead view of a fully equipped accessible toilet stall with blue mosaic tile walls, featuring fold-down grab bars on both sides, a raised backrest, an emergency pull cord, and a wall-mounted soap dispenser.",
+  "findings": [
+    {
+      "dimension": "bathroom",
+      "observation": "Wall-mounted, wall-hung toilet with a raised backrest/support panel visible. The toilet appears to be at a standard-to-raised accessible height.",
+      "estimated_measure": "approximately 45–50 cm seat height from floor",
+      "confidence": 0.65
+    },
+    {
+      "dimension": "bathroom",
+      "observation": "Two fold-down (swing-down) grab bars are installed on both the left and right sides of the toilet, each equipped with coloured push-button controls (yellow and blue) at the ends, consistent with electro-mechanical or assistive fold-down bar systems.",
+      "estimated_measure": "bars appear to extend approximately 70–80 cm from wall, positioned at roughly 75–85 cm height when horizontal",
+      "confidence": 0.88
+    },
+    {
+      "dimension": "bathroom",
+      "observation": "An emergency pull cord (red cord) is visible on the right-hand side wall, hanging down to near floor level, which is a required accessible facility feature for emergency assistance.",
+      "estimated_measure": null,
+      "confidence": 0.95
+    },
+    {
+      "dimension": "bathroom",
+      "observation": "A wall-mounted soap/hand sanitiser dispenser is installed on the left wall at what appears to be a reachable height for a seated user.",
+      "estimated_measure": "approximately 80–100 cm from floor",
+      "confidence": 0.72
+    },
+    {
+      "dimension": "bathroom",
+      "observation": "Toilet paper holder is integrated into the left grab bar assembly, keeping it within easy reach of a seated user without requiring leaning or stretching.",
+      "estimated_measure": null,
+      "confidence": 0.9
+    },
+    {
+      "dimension": "bathroom",
+      "observation": "A wall-mounted flush plate (push-button type) is positioned on the rear wall above the toilet cistern, reachable from a seated position.",
+      "estimated_measure": "approximately 90–110 cm from floor",
+      "confidence": 0.8
+    },
+    {
+      "dimension": "flooring",
+      "observation": "The floor is large-format grey/dark ceramic tile with visible grout lines and a floor drain grate in the lower-right corner. Surface appears smooth and may present moderate slip risk when wet.",
+      "estimated_measure": "tiles approximately 30–40 cm square",
+      "confidence": 0.85
+    },
+    {
+      "dimension": "bathroom",
+      "observation": "A handheld shower/bidet hose attachment is mounted on the right wall beside the toilet, providing additional hygiene access for users who cannot easily transfer.",
+      "estimated_measure": null,
+      "confidence": 0.82
+    },
+    {
+      "dimension": "bathroom",
+      "observation": "Clear floor space is visible on both sides of the toilet, suggesting adequate lateral transfer space for wheelchair users on either side.",
+      "estimated_measure": "approximately 80–100 cm clearance visible on the right side",
+      "confidence": 0.65
+    }
+  ]
+}

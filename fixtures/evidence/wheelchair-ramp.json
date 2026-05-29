@@ -1,0 +1,54 @@
+{
+  "language": "en",
+  "photo_description": "The exterior of a residential or small public building showing a concrete accessibility ramp with white metal handrails alongside a traditional staircase, leading to the building entrance from street level.",
+  "findings": [
+    {
+      "dimension": "equipment",
+      "observation": "A concrete accessibility ramp is present alongside the staircase, providing a gradual slope from street level up to the building entrance. The ramp appears to be a purpose-built retrofit.",
+      "estimated_measure": "approximately 4–6 m in length, with a rise of approximately 40–60 cm",
+      "confidence": 0.82
+    },
+    {
+      "dimension": "equipment",
+      "observation": "White metal handrails are installed on both sides of the ramp, running the full length of the ramp. The handrails appear to be at a standard height.",
+      "estimated_measure": "handrail height approximately 85–100 cm from ramp surface",
+      "confidence": 0.8
+    },
+    {
+      "dimension": "entrance",
+      "observation": "A traditional staircase with approximately 3–4 steps is present to the left of the ramp, leading to the same entrance level. Steps appear to have no tactile warning strips visible.",
+      "estimated_measure": "each step approximately 12–18 cm rise",
+      "confidence": 0.75
+    },
+    {
+      "dimension": "entrance",
+      "observation": "The ramp gradient appears moderate; visually it looks steeper than the recommended 1:12 (≈8%) gradient for wheelchair accessibility, which could pose a challenge for independent wheelchair users.",
+      "estimated_measure": "estimated gradient approximately 1:8 to 1:10 (~10–12%)",
+      "confidence": 0.62
+    },
+    {
+      "dimension": "flooring",
+      "observation": "The ramp surface is smooth concrete, which may present a slip risk when wet as no anti-slip texture or strips are visibly applied to the ramp surface.",
+      "estimated_measure": null,
+      "confidence": 0.72
+    },
+    {
+      "dimension": "flooring",
+      "observation": "The approach from the street is asphalt, which appears relatively smooth and level with no significant surface breaks or obstacles visible.",
+      "estimated_measure": null,
+      "confidence": 0.88
+    },
+    {
+      "dimension": "path_width",
+      "observation": "The ramp width appears sufficient for a single wheelchair, though the exact clearance between the handrails limits the usable width.",
+      "estimated_measure": "approximately 100–130 cm wide between handrails",
+      "confidence": 0.65
+    },
+    {
+      "dimension": "signage",
+      "observation": "No visible accessibility signage (ISA symbol or directional wayfinding) is observed directing users to the ramp.",
+      "estimated_measure": null,
+      "confidence": 0.8
+    }
+  ]
+}

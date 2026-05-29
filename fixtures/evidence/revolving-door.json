@@ -1,0 +1,48 @@
+{
+  "language": "en",
+  "photo_description": "The exterior entrance of a modern commercial building featuring a large revolving door with a stainless steel surround, flanked by a glass curtain wall facade, with pedestrians visible near the entrance.",
+  "findings": [
+    {
+      "dimension": "entrance",
+      "observation": "The primary entrance is a revolving door. Revolving doors are generally inaccessible to wheelchair users, scooter users, and people with mobility aids unless an adjacent bypass door is present. No bypass or automatic swing door is clearly visible adjacent to the revolving door in this view.",
+      "estimated_measure": null,
+      "confidence": 0.82
+    },
+    {
+      "dimension": "doorway",
+      "observation": "The revolving door appears to have multiple segments. Each individual segment opening is narrower than a standard accessible doorway; typical revolving door compartments are approximately 90–100 cm wide but the usable passage width per segment is reduced by the door leaves themselves, likely yielding a clear passage of approximately 70–85 cm per compartment.",
+      "estimated_measure": "approximately 70–85 cm clear width per compartment",
+      "confidence": 0.62
+    },
+    {
+      "dimension": "entrance",
+      "observation": "The entrance threshold appears to be at grade level with no visible steps leading up to the revolving door from the exterior plaza, suggesting a level approach.",
+      "estimated_measure": "threshold height approximately 0–2 cm",
+      "confidence": 0.78
+    },
+    {
+      "dimension": "flooring",
+      "observation": "The exterior approach surface appears to be polished or honed stone/terrazzo with a speckled pattern. The surface appears relatively smooth and level; wet conditions could increase slip risk given the polished finish.",
+      "estimated_measure": null,
+      "confidence": 0.8
+    },
+    {
+      "dimension": "path_width",
+      "observation": "The exterior plaza in front of the entrance appears wide and unobstructed, providing ample maneuvering space in the approach area.",
+      "estimated_measure": "approach width appears to exceed 2 m",
+      "confidence": 0.85
+    },
+    {
+      "dimension": "lighting",
+      "observation": "The entrance area receives abundant natural daylight through the large glass curtain wall facade. Interior lighting is visible through the glass but cannot be fully assessed from this angle.",
+      "estimated_measure": null,
+      "confidence": 0.85
+    },
+    {
+      "dimension": "signage",
+      "observation": "No visible accessible entrance signage, ISA (International Symbol of Accessibility) symbols, or wayfinding signs directing to an accessible alternative entrance are observable in this photo.",
+      "estimated_measure": null,
+      "confidence": 0.72
+    }
+  ]
+}

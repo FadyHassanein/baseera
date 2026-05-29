@@ -1,0 +1,12 @@
+{
+  "language": "en",
+  "photo_description": "A close-up macro photograph of a finger touching a sheet of Braille text, showing multiple rows of embossed Braille dots on white paper.",
+  "findings": [
+    {
+      "dimension": "signage",
+      "observation": "Braille text is present on paper, with clearly embossed dot patterns arranged in standard Braille cell formations across multiple lines. The dots appear well-defined and consistently raised, suggesting good tactile readability.",
+      "estimated_measure": null,
+      "confidence": 0.95
+    }
+  ]
+}

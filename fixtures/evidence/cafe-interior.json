@@ -1,0 +1,54 @@
+{
+  "language": "en",
+  "photo_description": "Exterior view of Café de Flore in Paris, showing a busy pavement terrace with tables and chairs set up along the sidewalk at a street corner, with the café's glass-fronted interior visible behind.",
+  "findings": [
+    {
+      "dimension": "entrance",
+      "observation": "No steps or ramp are clearly visible at the terrace entrance from the sidewalk. The terrace appears to be at the same level as the surrounding pavement, suggesting a level or near-level transition from street to seating area.",
+      "estimated_measure": "Step height approximately 0–2 cm, or flush",
+      "confidence": 0.62
+    },
+    {
+      "dimension": "seating",
+      "observation": "The outdoor terrace uses small round bistro-style tables with traditional wicker/rattan chairs and small round stools. Tables appear closely spaced with narrow aisles between them. Seating is fixed in style but movable in theory; however, the density of placement limits maneuverability.",
+      "estimated_measure": "Table height approximately 70–75 cm; aisle width between tables approximately 50–70 cm",
+      "confidence": 0.75
+    },
+    {
+      "dimension": "path_width",
+      "observation": "The usable path width between the occupied terrace tables and the street edge (bollards, parked car) appears narrow. A person using a wheelchair or mobility aid would likely find it difficult to navigate through the terrace seating area.",
+      "estimated_measure": "Passable corridor approximately 60–80 cm wide around the terrace perimeter",
+      "confidence": 0.65
+    },
+    {
+      "dimension": "flooring",
+      "observation": "The terrace floor is the public sidewalk, appearing to be flat paved stone or concrete typical of Parisian streets. Surface appears relatively smooth but may have minor joins or uneven sections common to older city pavements.",
+      "estimated_measure": null,
+      "confidence": 0.7
+    },
+    {
+      "dimension": "lighting",
+      "observation": "Small round pendant lights are mounted along the underside of the awning, providing supplemental lighting along the terrace edge. The setting is daytime with overcast natural light, reducing glare risk.",
+      "estimated_measure": null,
+      "confidence": 0.85
+    },
+    {
+      "dimension": "signage",
+      "observation": "Café name 'CAFE DE FLORE' is displayed in large, high-contrast green lettering on a white awning, clearly legible. The name also appears in cursive white lettering above the awning on the dark fascia. Signage is in French/Latin script only; no Braille or tactile elements are visible.",
+      "estimated_measure": "Awning lettering height approximately 15–20 cm",
+      "confidence": 0.9
+    },
+    {
+      "dimension": "doorway",
+      "observation": "The main entrance doors visible in the center of the facade appear to be glass-paneled swing doors with vertical handles. Door width is partially obscured by the terrace crowd but appears standard.",
+      "estimated_measure": "Door width approximately 80–90 cm",
+      "confidence": 0.55
+    },
+    {
+      "dimension": "other",
+      "observation": "Several bollards (short metal posts) are present along the terrace perimeter on the sidewalk, which could obstruct wheelchair or mobility aid navigation along the pavement edge.",
+      "estimated_measure": "Bollard height approximately 60–80 cm",
+      "confidence": 0.85
+    }
+  ]
+}

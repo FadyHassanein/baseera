@@ -1,0 +1,48 @@
+{
+  "language": "en",
+  "photo_description": "The entrance to Dufferin subway station (TTC, Toronto) showing automatic sliding glass doors, an accessibility symbol, and the station interior with tiled walls and polished flooring visible through the doors.",
+  "findings": [
+    {
+      "dimension": "entrance",
+      "observation": "Two sets of automatic sliding glass doors are visible at the station entrance. No steps or ramps are visible at the threshold; the transition from the exterior sidewalk to the interior appears level or near-level.",
+      "estimated_measure": "Threshold lip approximately 0–2 cm, near-flush",
+      "confidence": 0.82
+    },
+    {
+      "dimension": "doorway",
+      "observation": "The central opening created by the two sliding door panels appears wide enough for wheelchair access. Yellow 'Automatic Caution Door' stickers and 'Stand Clear' / 'Automatic Door' labels are affixed to the glass panels, indicating powered automatic operation.",
+      "estimated_measure": "Combined clear opening width approximately 120–160 cm when fully open",
+      "confidence": 0.72
+    },
+    {
+      "dimension": "signage",
+      "observation": "A large black fascia sign reads 'Dufferin Subway' in high-contrast white text with the TTC logo. In the upper-right corner, a standard blue ISA (International Symbol of Access) wheelchair symbol with the label 'Access' and a subway car icon labeled 'Subway' are clearly displayed, indicating accessible station designation.",
+      "estimated_measure": "Signs mounted approximately 2.5–3 m above ground level",
+      "confidence": 0.95
+    },
+    {
+      "dimension": "flooring",
+      "observation": "Interior flooring visible through the doors appears to be large polished terrazzo or stone tiles with a reflective surface, suggesting a potential slip risk when wet. The exterior threshold area is a concrete/paved sidewalk surface.",
+      "estimated_measure": null,
+      "confidence": 0.8
+    },
+    {
+      "dimension": "lighting",
+      "observation": "The interior is lit by ceiling-mounted pendant/globe light fixtures providing warm to neutral illumination. The entrance vestibule area appears moderately well lit. No strong glare sources are visible from this angle.",
+      "estimated_measure": null,
+      "confidence": 0.78
+    },
+    {
+      "dimension": "path_width",
+      "observation": "The interior corridor visible through the entrance doors appears wide, with no visible obstacles in the immediate path. An EXIT sign with an accessibility symbol is visible further inside, suggesting a designated accessible route continues beyond the entrance.",
+      "estimated_measure": "Interior corridor width approximately 3–5 m based on door and tile proportions",
+      "confidence": 0.62
+    },
+    {
+      "dimension": "equipment",
+      "observation": "The automatic sliding doors are a key accessibility feature. The EXIT sign visible inside includes an ISA symbol, suggesting an accessible exit path. Bicycles are visible parked inside near the entrance but do not appear to obstruct the main accessible path from this angle.",
+      "estimated_measure": null,
+      "confidence": 0.8
+    }
+  ]
+}

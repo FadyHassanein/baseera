@@ -1,0 +1,36 @@
+{
+  "language": "en",
+  "photo_description": "An outdoor curb cut ramp at the edge of a concrete sidewalk meeting an asphalt parking lot, featuring a bright yellow detectable warning surface (truncated dome tile) and grooved concrete flutes on the ramp slope.",
+  "findings": [
+    {
+      "dimension": "equipment",
+      "observation": "A curb cut ramp is present, providing a gradual transition from the raised concrete sidewalk to the asphalt parking lot surface. The ramp includes parallel grooved fluting across its surface to aid traction and drainage.",
+      "estimated_measure": "Ramp slope width approximately 90–120 cm based on visible surface area",
+      "confidence": 0.85
+    },
+    {
+      "dimension": "equipment",
+      "observation": "A bright yellow tactile detectable warning surface (truncated dome tile) is installed at the base of the curb cut ramp, positioned at the transition point between the sidewalk and the parking lot. The high-contrast yellow color against grey concrete provides strong visual contrast for low-vision users, and the dome pattern provides tactile underfoot warning.",
+      "estimated_measure": "Tile panel approximately 60–90 cm wide by 60–75 cm deep",
+      "confidence": 0.9
+    },
+    {
+      "dimension": "flooring",
+      "observation": "The sidewalk surface is smooth concrete, appearing dry and in good condition with no visible cracks or trip hazards. The asphalt parking lot surface appears intact with white painted lane markings visible.",
+      "estimated_measure": null,
+      "confidence": 0.85
+    },
+    {
+      "dimension": "parking",
+      "observation": "White painted lines on the asphalt adjacent to the curb cut suggest a designated parking area or access aisle immediately next to the accessible ramp, consistent with an accessible parking space or access corridor layout.",
+      "estimated_measure": null,
+      "confidence": 0.65
+    },
+    {
+      "dimension": "entrance",
+      "observation": "The curb cut eliminates any vertical step between the sidewalk and the parking lot surface, providing a step-free transition suitable for wheelchair users and mobility device users.",
+      "estimated_measure": "Curb height reduction to approximately 0 cm at the cut; adjacent curb height estimated at 10–15 cm",
+      "confidence": 0.8
+    }
+  ]
+}

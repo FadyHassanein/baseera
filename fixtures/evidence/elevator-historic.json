@@ -1,0 +1,48 @@
+{
+  "language": "en",
+  "photo_description": "An indoor elevator lobby with three stainless-steel elevator doors set into a dark-gray wall, dark carpet flooring, recessed fluorescent ceiling lighting, an illuminated red exit sign, and a call button panel between the left and center elevators.",
+  "findings": [
+    {
+      "dimension": "equipment",
+      "observation": "Three elevators are present side by side, providing vertical access. Each elevator has stainless-steel sliding doors with up/down indicator displays above them. A combined call button panel is mounted on the wall between the left and center elevators.",
+      "estimated_measure": "Elevator door openings appear approximately 90–110 cm wide each",
+      "confidence": 0.75
+    },
+    {
+      "dimension": "equipment",
+      "observation": "The call button panel between the left and center elevators appears to be mounted at a height that may be accessible to wheelchair users; the panel face is visible with tactile-style buttons.",
+      "estimated_measure": "Panel center approximately 90–110 cm from floor",
+      "confidence": 0.62
+    },
+    {
+      "dimension": "path_width",
+      "observation": "The elevator lobby corridor in front of the elevators is wide and clear of obstacles, providing ample maneuvering space for wheelchair users.",
+      "estimated_measure": "Lobby depth approximately 3–4 m from elevator doors to the camera position",
+      "confidence": 0.72
+    },
+    {
+      "dimension": "flooring",
+      "observation": "The floor is covered with low-pile dark carpet. No visible lips, ridges, or transitions are apparent in the approach area, but carpet can present slightly increased rolling resistance for wheelchair users.",
+      "estimated_measure": null,
+      "confidence": 0.88
+    },
+    {
+      "dimension": "lighting",
+      "observation": "Recessed fluorescent/LED ceiling panels provide bright, even overhead lighting throughout the lobby. No significant glare from windows is visible; lighting appears adequate for wayfinding.",
+      "estimated_measure": null,
+      "confidence": 0.9
+    },
+    {
+      "dimension": "signage",
+      "observation": "An illuminated red EXIT sign is visible in the upper right corner of the lobby, providing emergency egress indication. No Braille or tactile wayfinding signage is visible in this view.",
+      "estimated_measure": null,
+      "confidence": 0.85
+    },
+    {
+      "dimension": "other",
+      "observation": "A red fire extinguisher is mounted on the wall to the right near a door, which is a safety feature but may protrude into the path width if positioned close to the walkway.",
+      "estimated_measure": null,
+      "confidence": 0.8
+    }
+  ]
+}
