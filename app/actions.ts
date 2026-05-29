@@ -1,10 +1,11 @@
 "use server";
 
-import { runProfilerTurn } from "@/lib/anthropic";
+import { runProfilerTurn, runReport } from "@/lib/anthropic";
 import { transcribeAudio as whisperTranscribe } from "@/lib/whisper";
 import { extractEvidence, type ImageMediaType } from "@/lib/vision";
-import type { ProfilerTurn, ConversationMessage } from "@/lib/schema";
+import type { Profile, ProfilerTurn, ConversationMessage } from "@/lib/schema";
 import type { Evidence } from "@/lib/evidenceSchema";
+import type { Report } from "@/lib/reportSchema";
 import type { Lang } from "@/lib/messages";
 
 export type ProfilerTurnResponse =
@@ -117,4 +118,23 @@ export async function transcribeAudio(formData: FormData): Promise<TranscribeRes
       error: err instanceof Error ? err.message : "Transcription failed.",
     };
   }
+}
+
+export type GenerateReportResponse =
+  | { ok: true; report: Report }
+  | { ok: false; error: string };
+
+export async function generateReport(
+  profile: Profile,
+  evidence: Evidence[],
+  placeName: string | null
+): Promise<GenerateReportResponse> {
+  if (evidence.length === 0) {
+    return { ok: false, error: "No evidence supplied." };
+  }
+  const result = await runReport(profile, evidence, placeName ?? undefined);
+  if (!result.ok) {
+    return { ok: false, error: result.error };
+  }
+  return { ok: true, report: result.report };
 }

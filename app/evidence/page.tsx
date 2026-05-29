@@ -5,6 +5,7 @@ import { extractEvidenceFromForm, type PhotoEvidenceResult } from "../actions";
 import { messages, type Lang } from "@/lib/messages";
 import { DropZone, PhotoResultView } from "@/components/evidence-result";
 import { TopNav } from "@/components/chrome";
+import { saveEvidence, clearEvidence, clearReport, type StoredEvidence } from "@/lib/storage";
 
 const MAX_PHOTOS = 6;
 
@@ -63,6 +64,8 @@ export default function EvidencePage() {
     setResults([]);
     setWarning(null);
     if (fileInputRef.current) fileInputRef.current.value = "";
+    clearEvidence();
+    clearReport();
   }
 
   async function handleAnalyze() {
@@ -76,6 +79,10 @@ export default function EvidencePage() {
     try {
       const photoResults = await extractEvidenceFromForm(formData);
       setResults(photoResults);
+      const stored: StoredEvidence[] = photoResults
+        .filter((r): r is typeof r & { evidence: NonNullable<typeof r.evidence> } => r.evidence !== null)
+        .map((r) => ({ fileName: r.fileName, evidence: r.evidence }));
+      if (stored.length > 0) saveEvidence(stored);
     } finally {
       setAnalyzing(false);
     }
@@ -172,6 +179,15 @@ export default function EvidencePage() {
             >
               {t.evidenceClearPhotos}
             </button>
+            {results.some((r) => r.evidence !== null) && (
+              <a
+                href="/analysis"
+                className="ms-auto inline-flex min-h-11 items-center gap-2 rounded-md bg-[var(--color-brand)] px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-[var(--color-brand-dark)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand)] focus-visible:ring-offset-2"
+              >
+                {t.continueToReport}
+                <span aria-hidden>{lang === "ar" ? "←" : "→"}</span>
+              </a>
+            )}
           </div>
         </div>
       )}

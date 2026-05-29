@@ -6,8 +6,8 @@ import type { Messages, Lang } from "@/lib/messages";
 export const PHASES = [
   { id: "profile", n: "01", href: "/profile", labelKey: "phaseProfile" },
   { id: "places", n: "02", href: "/evidence", labelKey: "phasePlaces" },
-  { id: "analysis", n: "03", href: "#", labelKey: "phaseAnalysis" },
-  { id: "report", n: "04", href: "#", labelKey: "phaseReport" },
+  { id: "analysis", n: "03", href: "/analysis", labelKey: "phaseAnalysis" },
+  { id: "report", n: "04", href: "/report", labelKey: "phaseReport" },
 ] as const;
 
 export type PhaseId = (typeof PHASES)[number]["id"];
@@ -75,9 +75,9 @@ export function PhaseTracker({
           ? "text-[var(--color-confirmed)] font-medium"
           : "text-[var(--color-ink-3)] font-medium";
         const label = t[p.labelKey] as string;
-        const clickable = p.href !== "#";
-        const Wrapper: React.ElementType = clickable ? Link : "span";
-        const wrapperProps = clickable ? { href: p.href } : {};
+        const clickable = true;
+        const Wrapper: React.ElementType = Link;
+        const wrapperProps = { href: p.href };
         return (
           <div key={p.id} className="flex items-center">
             <Wrapper

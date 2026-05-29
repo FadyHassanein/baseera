@@ -7,6 +7,9 @@ import {
   type ConversationMessage,
 } from "./schema";
 import { SYSTEM_PROMPT } from "./prompts";
+import { ReportSchema, type Report } from "./reportSchema";
+import { REPORT_SYSTEM_PROMPT } from "./reportPrompt";
+import type { Evidence } from "./evidenceSchema";
 
 export const MODEL_ID = "claude-sonnet-4-6";
 
@@ -93,6 +96,71 @@ export async function generateProfile(narrative: string): Promise<ProfileResult>
       "Model asked a follow-up question instead of producing a profile. Use the conversational profiler instead. Question was: " +
       result.turn.text,
   };
+}
+
+export type ReportResult =
+  | { ok: true; report: Report }
+  | { ok: false; error: string; raw?: string };
+
+export async function runReport(
+  profile: Profile,
+  evidence: Evidence[],
+  placeName?: string
+): Promise<ReportResult> {
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return { ok: false, error: "ANTHROPIC_API_KEY is not set." };
+  }
+
+  const client = new Anthropic();
+
+  const userPayload = {
+    profile,
+    evidence,
+    place_name: placeName ?? null,
+  };
+
+  const response = await client.messages.create({
+    model: MODEL_ID,
+    max_tokens: 4096,
+    system: [
+      {
+        type: "text",
+        text: REPORT_SYSTEM_PROMPT,
+        cache_control: { type: "ephemeral" },
+      },
+    ],
+    messages: [
+      {
+        role: "user",
+        content: JSON.stringify(userPayload, null, 2),
+      },
+    ],
+  });
+
+  const block = response.content[0];
+  if (!block || block.type !== "text") {
+    return { ok: false, error: "Unexpected response type from Claude." };
+  }
+
+  const cleaned = stripCodeFences(block.text);
+
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(cleaned);
+  } catch {
+    return { ok: false, error: "Claude did not return valid JSON.", raw: block.text };
+  }
+
+  const result = ReportSchema.safeParse(parsed);
+  if (!result.success) {
+    return {
+      ok: false,
+      error: "Schema validation failed: " + JSON.stringify(result.error.format()),
+      raw: cleaned,
+    };
+  }
+
+  return { ok: true, report: result.data };
 }
 
 export { ProfileSchema };

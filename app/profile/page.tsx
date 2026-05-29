@@ -6,6 +6,7 @@ import type { Profile, ConversationMessage } from "@/lib/schema";
 import { messages, type Lang, type Messages } from "@/lib/messages";
 import { ProfileView } from "@/components/profile-view";
 import { TopNav } from "@/components/chrome";
+import { saveProfile, clearProfile, clearReport } from "@/lib/storage";
 
 type VoiceState = "idle" | "recording" | "transcribing";
 
@@ -107,6 +108,7 @@ export default function ProfilePage() {
       ]);
     } else {
       setProfile(result.turn.profile);
+      saveProfile(result.turn.profile);
     }
   }
 
@@ -115,6 +117,8 @@ export default function ProfilePage() {
     setProfile(null);
     setPendingInput("");
     setErrorMsg(null);
+    clearProfile();
+    clearReport();
   }
 
   async function startRecording() {

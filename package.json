@@ -10,7 +10,8 @@
     "profile:ar": "tsx scripts/profiler.ts < fixtures/transcript-arabic.txt",
     "profile:en": "tsx scripts/profiler.ts < fixtures/transcript-english.txt",
     "profile:chat": "tsx scripts/conversation-test.ts",
-    "evidence": "tsx scripts/evidence.ts"
+    "evidence": "tsx scripts/evidence.ts",
+    "report:smoke": "tsx scripts/report-test.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",
