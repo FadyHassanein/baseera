@@ -29,7 +29,7 @@ export const FindingSchema = z.object({
 export type Finding = z.infer<typeof FindingSchema>;
 
 export const EvidenceSchema = z.object({
-  language: z.enum(["en"]),
+  language: z.enum(["ar", "en"]),
   photo_description: z.string().min(1),
   findings: z.array(FindingSchema),
 });

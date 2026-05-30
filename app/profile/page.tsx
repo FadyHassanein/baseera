@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { submitProfilerTurn, transcribeAudio } from "../actions";
 import type { Profile, ConversationMessage } from "@/lib/schema";
-import { messages, type Lang, type Messages } from "@/lib/messages";
+import { messages, type Messages } from "@/lib/messages";
+import { useLang } from "@/lib/use-lang";
 import { ProfileView } from "@/components/profile-view";
 import { TopNav } from "@/components/chrome";
 import { saveProfile, clearProfile, clearReport } from "@/lib/storage";
@@ -21,7 +22,7 @@ const SAMPLE_AR = `قبل سنتين صار لي جلطة في المخ. من ب
 const SAMPLE_EN = `I've been a manual wheelchair user for about eight years. I can transfer to a chair or toilet on my own as long as there's at least three feet of clear space next to whatever I'm transferring to. Doorways under thirty-two inches are tight. I also have some vision loss in my right eye that mostly affects me in dim lighting. Stairs are obviously a no-go, and I prefer venues where I can park close to the entrance because pushing long distances over uneven ground tires me out.`;
 
 export default function ProfilePage() {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useLang();
   const t = messages[lang];
 
   const [conversation, setConversation] = useState<ConversationMessage[]>([
@@ -386,7 +387,7 @@ function ChatBubble({
           isAI ? "text-[var(--color-ink-3)]" : "text-[var(--color-brand-light)]"
         }`}
       >
-        {isAI ? t.baseeraLabel : t.youLabel}
+        {isAI ? t.assistantLabel : t.youLabel}
       </div>
       <div
         dir="auto"
@@ -406,7 +407,7 @@ function PendingBubble({ t }: { t: Messages }) {
   return (
     <div className="flex flex-col items-start">
       <div className="text-[11px] font-semibold uppercase tracking-wider mb-1 text-[var(--color-ink-3)]">
-        {t.baseeraLabel}
+        {t.assistantLabel}
       </div>
       <div className="inline-flex items-center gap-1.5 rounded-2xl rounded-bl-sm bg-[var(--color-surface)] px-4 py-3">
         <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-ink-3)] animate-pulse" />

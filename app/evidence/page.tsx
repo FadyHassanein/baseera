@@ -2,15 +2,17 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { extractEvidenceFromForm, type PhotoEvidenceResult } from "../actions";
-import { messages, type Lang } from "@/lib/messages";
+import { messages } from "@/lib/messages";
+import { useLang } from "@/lib/use-lang";
 import { DropZone, PhotoResultView } from "@/components/evidence-result";
 import { TopNav } from "@/components/chrome";
 import { saveEvidence, clearEvidence, clearReport, type StoredEvidence } from "@/lib/storage";
+import { downscaleImage } from "@/lib/downscale";
 
-const MAX_PHOTOS = 6;
+const MAX_PHOTOS = 10;
 
 export default function EvidencePage() {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useLang();
   const t = messages[lang];
   const [files, setFiles] = useState<File[]>([]);
   const [results, setResults] = useState<PhotoEvidenceResult[]>([]);
@@ -73,8 +75,10 @@ export default function EvidencePage() {
     setAnalyzing(true);
     setWarning(null);
 
+    const downscaled = await Promise.all(files.map(downscaleImage));
     const formData = new FormData();
-    files.forEach((file) => formData.append("photos", file));
+    formData.append("lang", lang);
+    downscaled.forEach((file) => formData.append("photos", file));
 
     try {
       const photoResults = await extractEvidenceFromForm(formData);

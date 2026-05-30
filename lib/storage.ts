@@ -4,9 +4,9 @@ import { ProfileSchema, type Profile } from "./schema";
 import { EvidenceSchema, type Evidence } from "./evidenceSchema";
 import { ReportSchema, type Report } from "./reportSchema";
 
-const PROFILE_KEY = "baseera.profile.v1";
-const EVIDENCE_KEY = "baseera.evidence.v1";
-const REPORT_KEY = "baseera.report.v1";
+const PROFILE_KEY = "accesslens.profile.v1";
+const EVIDENCE_KEY = "accesslens.evidence.v1";
+const REPORT_KEY = "accesslens.report.v1";
 
 export type StoredEvidence = {
   fileName: string;

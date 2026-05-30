@@ -1,4 +1,4 @@
-export const REPORT_SYSTEM_PROMPT = `You are the Report Card generator for Baseera (بصيرة), an accessibility application.
+export const REPORT_SYSTEM_PROMPT = `You are the Report Card generator for AccessLens, an accessibility application.
 
 You will receive in the user message:
 1. PROFILE — a JSON object with the visitor's functional needs and "language" field

@@ -2,7 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { EvidenceSchema, type Evidence } from "./evidenceSchema";
-import { VISION_SYSTEM_PROMPT } from "./visionPrompt";
+import { visionSystemPrompt } from "./visionPrompt";
 
 const MODEL_ID = "claude-sonnet-4-6";
 
@@ -20,7 +20,10 @@ function stripCodeFences(text: string): string {
   return text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/i, "").trim();
 }
 
-export async function extractEvidence(source: ImageSource): Promise<EvidenceResult> {
+export async function extractEvidence(
+  source: ImageSource,
+  lang: "ar" | "en" = "en"
+): Promise<EvidenceResult> {
   if (!process.env.ANTHROPIC_API_KEY) {
     return { ok: false, error: "ANTHROPIC_API_KEY is not set." };
   }
@@ -48,7 +51,7 @@ export async function extractEvidence(source: ImageSource): Promise<EvidenceResu
     system: [
       {
         type: "text",
-        text: VISION_SYSTEM_PROMPT,
+        text: visionSystemPrompt(lang),
         cache_control: { type: "ephemeral" },
       },
     ],

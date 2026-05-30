@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { messages, type Lang, type Messages } from "@/lib/messages";
+import { messages, type Messages } from "@/lib/messages";
+import { useLang } from "@/lib/use-lang";
 import { TopNav } from "@/components/chrome";
 import {
   loadProfile,
@@ -17,7 +18,7 @@ import type { Profile } from "@/lib/schema";
 type Phase = "init" | "running" | "done" | "error" | "missing";
 
 export default function AnalysisPage() {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useLang();
   const t = messages[lang];
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("init");

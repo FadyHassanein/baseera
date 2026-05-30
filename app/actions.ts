@@ -47,7 +47,11 @@ export type PhotoEvidenceResult = {
   error: string | null;
 };
 
-const MAX_PHOTOS = 6;
+const MAX_PHOTOS = 10;
+// Cap simultaneous vision calls — firing 10 at once occasionally times out on
+// weaker networks. 5-wide keeps the batch fast while staying reliable.
+const PHOTO_CONCURRENCY = 5;
+const TRANSIENT_ERROR = /ETIMEDOUT|ECONNRESET|ENOTFOUND|EAI_AGAIN|fetch failed|Connection error|terminated/i;
 
 function mediaTypeFromName(name: string): ImageMediaType {
   const lower = name.toLowerCase();
@@ -57,9 +61,66 @@ function mediaTypeFromName(name: string): ImageMediaType {
   return "image/jpeg";
 }
 
+function isTransient(err: unknown): boolean {
+  const msg = err instanceof Error ? `${err.name} ${err.message}` : String(err);
+  return TRANSIENT_ERROR.test(msg);
+}
+
+async function extractOne(file: File, lang: Lang): Promise<PhotoEvidenceResult> {
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const source = {
+    type: "base64" as const,
+    data: buffer.toString("base64"),
+    mediaType: mediaTypeFromName(file.name),
+  };
+
+  // One retry on a transient network error (the rest of the batch is unaffected).
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const result = await extractEvidence(source, lang);
+      if (!result.ok) {
+        return { fileName: file.name, evidence: null, error: result.error };
+      }
+      return { fileName: file.name, evidence: result.evidence, error: null };
+    } catch (err) {
+      if (attempt === 0 && isTransient(err)) {
+        await new Promise((r) => setTimeout(r, 400));
+        continue;
+      }
+      return {
+        fileName: file.name,
+        evidence: null,
+        error: err instanceof Error ? err.message : "Unknown error processing this photo.",
+      };
+    }
+  }
+  return { fileName: file.name, evidence: null, error: "Unknown error processing this photo." };
+}
+
+// Bounded-concurrency map that preserves input order.
+async function mapPool<T, R>(
+  items: T[],
+  limit: number,
+  fn: (item: T) => Promise<R>
+): Promise<R[]> {
+  const results = new Array<R>(items.length);
+  let next = 0;
+  async function worker() {
+    while (true) {
+      const i = next++;
+      if (i >= items.length) return;
+      results[i] = await fn(items[i]);
+    }
+  }
+  const workers = Array.from({ length: Math.min(limit, items.length) }, () => worker());
+  await Promise.all(workers);
+  return results;
+}
+
 export async function extractEvidenceFromForm(
   formData: FormData
 ): Promise<PhotoEvidenceResult[]> {
+  const lang = (formData.get("lang") as Lang | null) ?? "en";
   const files = formData
     .getAll("photos")
     .filter((entry): entry is File => entry instanceof File && entry.size > 0)
@@ -69,29 +130,7 @@ export async function extractEvidenceFromForm(
     return [];
   }
 
-  const tasks = files.map(async (file): Promise<PhotoEvidenceResult> => {
-    try {
-      const buffer = Buffer.from(await file.arrayBuffer());
-      const result = await extractEvidence({
-        type: "base64",
-        data: buffer.toString("base64"),
-        mediaType: mediaTypeFromName(file.name),
-      });
-
-      if (!result.ok) {
-        return { fileName: file.name, evidence: null, error: result.error };
-      }
-      return { fileName: file.name, evidence: result.evidence, error: null };
-    } catch (err) {
-      return {
-        fileName: file.name,
-        evidence: null,
-        error: err instanceof Error ? err.message : "Unknown error processing this photo.",
-      };
-    }
-  });
-
-  return await Promise.all(tasks);
+  return mapPool(files, PHOTO_CONCURRENCY, (file) => extractOne(file, lang));
 }
 
 export async function transcribeAudio(formData: FormData): Promise<TranscribeResponse> {

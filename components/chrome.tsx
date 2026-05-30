@@ -136,16 +136,10 @@ export function TopNav({
         <Link href="/" className="flex items-center gap-2.5 group">
           <BrandMark size={26} />
           <span
-            className="font-display text-[22px] font-semibold leading-none tracking-[-0.01em] text-[var(--color-brand)]"
-          >
-            بصيرة
-          </span>
-          <span className="text-[var(--color-ink-3)]">·</span>
-          <span
             dir="ltr"
-            className="font-display text-[16px] font-medium leading-none text-[var(--color-ink-2)] group-hover:text-[var(--color-ink-1)]"
+            className="font-display text-[22px] font-semibold leading-none tracking-[-0.01em] text-[var(--color-brand)] group-hover:text-[var(--color-brand-dark)]"
           >
-            Baseera
+            AccessLens
           </span>
         </Link>
 

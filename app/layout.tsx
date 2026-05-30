@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "بصيرة | Baseera",
+  title: "AccessLens",
   description:
     "Honest, personalized accessibility intelligence for daily life — homes, restaurants, workplaces, public spaces.",
 };

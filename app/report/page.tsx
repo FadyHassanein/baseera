@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { messages, type Lang, type Messages } from "@/lib/messages";
+import { useLang } from "@/lib/use-lang";
 import { TopNav } from "@/components/chrome";
 import {
   BORDER_BY_STATE,
@@ -42,7 +43,7 @@ type LoadState =
     };
 
 export default function ReportPage() {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useLang();
   const t = messages[lang];
   const router = useRouter();
   const [state, setState] = useState<LoadState>({ phase: "init" });

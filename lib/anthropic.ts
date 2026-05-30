@@ -121,7 +121,7 @@ export async function runReport(
 
   const response = await client.messages.create({
     model: MODEL_ID,
-    max_tokens: 4096,
+    max_tokens: 8192,
     system: [
       {
         type: "text",
@@ -140,6 +140,15 @@ export async function runReport(
   const block = response.content[0];
   if (!block || block.type !== "text") {
     return { ok: false, error: "Unexpected response type from Claude." };
+  }
+
+  if (response.stop_reason === "max_tokens") {
+    return {
+      ok: false,
+      error:
+        "The report was too long and got cut off before completing. Try again, or analyze fewer photos at once.",
+      raw: block.text,
+    };
   }
 
   const cleaned = stripCodeFences(block.text);

@@ -7,7 +7,7 @@ export type TranscribeResult =
 
 export async function transcribeAudio(audio: Blob, lang?: Lang): Promise<TranscribeResult> {
   if (!process.env.OPENAI_API_KEY) {
-    return { ok: false, error: "OPENAI_API_KEY is not set. Add it to baseera/.env" };
+    return { ok: false, error: "OPENAI_API_KEY is not set. Add it to .env" };
   }
 
   const openai = new OpenAI();

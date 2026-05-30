@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { messages, type Lang } from "@/lib/messages";
+import { messages } from "@/lib/messages";
+import { useLang } from "@/lib/use-lang";
 import { TopNav, BrandMark } from "@/components/chrome";
 
 const LANDING_CONTENT = {
@@ -11,7 +12,7 @@ const LANDING_CONTENT = {
       eyebrow: "Open beta · free to try",
       titleA: "Visit any place,",
       titleB: "knowingly.",
-      subtitleA: "Baseera reads photos and descriptions of any place — homes, cafés, clinics, public spaces — and tells you, in plain language, what is ",
+      subtitleA: "AccessLens reads photos and descriptions of any place — homes, cafés, clinics, public spaces — and tells you, in plain language, what is ",
       subtitleConfirmed: "confirmed",
       subtitleComma: ", ",
       subtitleUncertain: "uncertain",
@@ -59,7 +60,7 @@ const LANDING_CONTENT = {
     honesty: {
       eyebrow: 'Why we say "uncertain"',
       title: "A confident wrong answer is the most expensive mistake an accessibility product can make.",
-      body: "Baseera never overstates confidence. When a photo doesn't show the thing it needs to, we say so — and we draft the message to the venue on your behalf. Every claim names its source. Every uncertainty gets its own plain-language label. Trust is earned line by line.",
+      body: "AccessLens never overstates confidence. When a photo doesn't show the thing it needs to, we say so — and we draft the message to the venue on your behalf. Every claim names its source. Every uncertainty gets its own plain-language label. Trust is earned line by line.",
     },
     faq: {
       eyebrow: "Common questions",
@@ -89,7 +90,7 @@ const LANDING_CONTENT = {
       eyebrow: "نسخة تجريبية · مجاناً",
       titleA: "زُر أي مكان،",
       titleB: "عن وعي.",
-      subtitleA: "تقرأ بصيرة صور وأوصاف أي مكان — منازل، مقاهٍ، عيادات، أماكن عامة — وتخبرك، بلغة واضحة، ما هو ",
+      subtitleA: "يقرأ تطبيق AccessLens صور وأوصاف أي مكان — منازل، مقاهٍ، عيادات، أماكن عامة — ويخبرك، بلغة واضحة، ما هو ",
       subtitleConfirmed: "مؤكد",
       subtitleComma: "، ",
       subtitleUncertain: "غير مؤكد",
@@ -137,7 +138,7 @@ const LANDING_CONTENT = {
     honesty: {
       eyebrow: "لماذا نقول «غير مؤكد»",
       title: "إجابة خاطئة بثقة هي أغلى خطأ يمكن أن يرتكبه منتج للوصول.",
-      body: "بصيرة لا تبالغ في الثقة أبداً. حين لا تُظهر الصورة ما يلزم، نقول ذلك — ونصيغ الرسالة للمكان نيابةً عنك. كل ادعاء يذكر مصدره. كل عدم يقين له تسميته الواضحة. الثقة تُكسب سطراً بسطر.",
+      body: "تطبيق AccessLens لا يبالغ في الثقة أبداً. حين لا تُظهر الصورة ما يلزم، نقول ذلك — ونصيغ الرسالة للمكان نيابةً عنك. كل ادعاء يذكر مصدره. كل عدم يقين له تسميته الواضحة. الثقة تُكسب سطراً بسطر.",
     },
     faq: {
       eyebrow: "أسئلة شائعة",
@@ -165,7 +166,7 @@ const LANDING_CONTENT = {
 } as const;
 
 export default function LandingPage() {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useLang();
   const t = messages[lang];
   const c = LANDING_CONTENT[lang];
   const isAr = lang === "ar";
@@ -322,8 +323,8 @@ export default function LandingPage() {
           <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2.5">
               <BrandMark size={22} />
-              <span className="font-display text-[18px] font-semibold text-[var(--color-brand)]">
-                بصيرة
+              <span dir="ltr" className="font-display text-[18px] font-semibold text-[var(--color-brand)]">
+                AccessLens
               </span>
               <span className="text-[var(--color-ink-3)] text-xs ms-2">· {t.tagline}</span>
             </div>
