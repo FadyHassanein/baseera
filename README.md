@@ -2,6 +2,8 @@
 
 **Bilingual AI accessibility intelligence for any place.**
 
+🟢 **Live demo:** <https://baseera.up.railway.app/>
+
 Baseera reads photos and descriptions of any place — homes, restaurants, clinics, public spaces — and produces an honest, confidence-scored accessibility report for a specific visitor, in Arabic or English.
 
 This is the submission for the [**King Salman Center for Disability Research AI Hackathon for Persons with Disabilities**](https://hackathon.kscdr.org/) (Riyadh, October 11–13 2026), in the **Daily Life & Assistive Technologies** track.
